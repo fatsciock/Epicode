@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form di Registrazione</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registrazione Utente</h2>
+    <form onsubmit="submitForm(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required>
+        
+        <label for="email">Indirizzo Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="data">Data di Nascita:</label>
+        <input type="date" id="data" name="data" required>
+        
+        <label for="telefono">Numero di Telefono:</label>
+        <input type="number" id="telefono" name="telefono" required>
+        
+        <fieldset>
+            <legend>Gusti Musicali:</legend>
+            <label><input type="checkbox" name="musica" value="classic"> Classica</label>
+            <label><input type="checkbox" name="musica" value="rock"> Rock</label><br>
+            <label><input type="checkbox" name="musica" value="rap"> Rap</label>
+            <label><input type="checkbox" name="musica" value="pop"> Pop</label><br>
+            <label><input type="checkbox" name="musica" value="punk"> Punk</label><br>
+            <label><input type="checkbox" name="musica" value="metal"> Metal</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Accettazione Termini e Condizioni:</legend>
+            <label><input type="radio" name="termini" value="accetto" required> Accetto</label>
+        </fieldset>
+        
+        <button type="submit">Invia Registrazione</button>
+    </form>
+    
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Registrazione inviata!");
+        }
+    </script>
+</body>
+</html>
